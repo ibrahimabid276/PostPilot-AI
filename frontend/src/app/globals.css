@@ -4,9 +4,34 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
+:root {
+  --background: #f2f4f5;
+  --background-secondary: #e7ecec;
+  --primary: #155c84;
+  --primary-light: #2c97b8;
+  --dark: #24373a;
+  --dark-text: #182324;
+  --white: #ffffff;
+  --success: #2faf7a;
+  --warning: #f2a93b;
+  --error: #e15a5a;
+}
+
+.dark {
+  --background: #0d1a1f;
+  --background-secondary: #1a2b32;
+  --primary: #2c97b8;
+  --primary-light: #4ab3d3;
+  --dark: #e7ecec;
+  --dark-text: #e7ecec;
+  --white: #1a2b32;
+}
+
 body {
   font-family: "Inter", sans-serif;
-  background: linear-gradient(135deg, #f2f4f5 0%, #e7ecec 50%, #f2f4f5 100%);
+  background: var(--background);
+  color: var(--dark-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
   min-height: 100vh;
 }
 
@@ -16,6 +41,15 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
+.dark .glass {
+  background: rgba(26, 43, 50, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .shadow-soft {
   box-shadow: 0 20px 60px rgba(18, 30, 32, 0.1);
+}
+
+.dark .shadow-soft {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }

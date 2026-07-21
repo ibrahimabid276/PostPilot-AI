@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { Home, FileText, History, Settings, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { removeToken } from "@/lib/auth";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -60,7 +61,11 @@ export const DashboardLayout = ({ children, currentPage = "dashboard" }: Dashboa
           })}
         </nav>
 
-        <div className="pt-6 border-t border-white/20">
+        <div className="pt-6 border-t border-white/20 space-y-2">
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-gray-600">Theme</span>
+            <ThemeToggle />
+          </div>
           <Button
             onClick={handleLogout}
             variant="ghost"
